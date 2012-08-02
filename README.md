@@ -18,9 +18,9 @@ Running the app
 
 This Sinatra app uses thin for a web server, so all you have to do is:
 
-    rackup
+    bundle && rackup
     
-This will start the server on port 9292.
+This will install all required gems in your Gemfile, then start the server on port 9292.
 
 Using assets
 ------------

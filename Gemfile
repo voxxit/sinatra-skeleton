@@ -3,10 +3,9 @@ source :rubygems
 gem "sinatra"
 gem "sinatra-contrib"
 
-# ORM
-gem "datamapper"
+# ORM (with MySQL)
+gem "data_mapper", "~> 1.2.0"
 gem "dm-mysql-adapter"
-gem "dm-migrations"
 
 # Console
 gem "racksh"
@@ -15,6 +14,6 @@ gem "racksh"
 gem "thin"
 
 # Asset pipeline
-gem "sprockets"
-gem "coffee-script"
+gem "sprockets", "~> 2.3.2"
+gem "coffee-script", "~> 1.1.0"
 gem "sass"

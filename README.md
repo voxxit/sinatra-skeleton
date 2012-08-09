@@ -18,7 +18,7 @@ Running the app
 
 This Sinatra app uses thin for a web server, so all you have to do is:
 
-    bundle && rackup
+    $ bundle && rackup
     
 This will install all required gems in your Gemfile, then start the server on port 9292.
 
@@ -30,7 +30,23 @@ you can link to them in the following manner:
 
     /assets/javascripts/application.js.coffee -> /assets/application.js
     /assets/stylesheets/application.css.scss  -> /assets/application.css
-    
+
+In production, this is:
+
+    /assets/javascripts/application.js.coffee -> /assets/application.min.js
+    /assets/stylesheets/application.css.scss  -> /assets/application.min.css
+
+NOTE: Currently assets are not minified in production.
+
+Precompiling assets
+-------------------
+
+Assets will automatically precompile when you push to Heroku. However, if you want to do this manually in your development environment, use:
+
+    $ bundle exec rake assets:precompile
+
+NOTE: Currently assets are not minified by this script.
+
 Pushing to Heroku
 -----------------
 

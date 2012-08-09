@@ -6,12 +6,7 @@ Bundler.require
 require "./app"
 
 map "/assets" do
-  env = Sprockets::Environment.new
-
-  env.append_path "assets/javascripts"
-  env.append_path "assets/stylesheets"
-  
-  run env
+  run App.settings.sprockets
 end
 
 map "/" do

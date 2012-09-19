@@ -1,18 +1,28 @@
+class Object
+  def blank?
+    respond_to?(:empty?) ? empty? : !self
+  end
+end
+
 module Sinatra
   module AssetHelpers
-    def stylesheets_tag
-      if production?
-        '<link rel="stylesheet" href="/assets/application.min.css" type="text/css" />'
+    def stylesheets_tag(name = "application")
+      env = ENV['RACK_ENV']
+      
+      if env and env == "production" or env == "staging"
+        "<link rel=\"stylesheet\" href=\"/assets/#{name}.min.css\" type=\"text/css\" />"
       else
-        '<link rel="stylesheet" href="/assets/application.css" type="text/css" />'
+        "<link rel=\"stylesheet\" href=\"/assets/#{name}.css\" type=\"text/css\" />"
       end
     end
 
-    def javascripts_tag
-      if production?
-        '<script src="/assets/application.min.js"></script>'
+    def javascripts_tag(name = "application")
+      env = ENV['RACK_ENV']
+
+      if env and env == "production" or env == "staging"
+        "<script src=\"/assets/#{name}.min.js\"></script>"
       else
-        '<script src="/assets/application.js"></script>'
+        "<script src=\"/assets/#{name}.js\"></script>"
       end
     end
   end

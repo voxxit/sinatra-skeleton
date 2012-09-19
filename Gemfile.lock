@@ -61,6 +61,7 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     fastercsv (1.5.5)
+    haml (3.1.7)
     hike (1.2.1)
     json (1.6.7)
     json_pure (1.6.7)
@@ -103,13 +104,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-script (~> 2.2.0)
-  data_mapper (~> 1.2.0)
+  coffee-script
+  data_mapper
   dm-postgres-adapter
+  haml
   racksh
   rake
   sass
   sinatra
   sinatra-contrib
-  sprockets (~> 2.3.2)
+  sprockets
   thin

@@ -1,0 +1,6 @@
+development:
+  # Development environment variables
+staging:
+  # Staging environment variables
+production:
+  # Production environment variables

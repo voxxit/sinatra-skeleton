@@ -66,7 +66,7 @@ GEM
     json (1.6.7)
     json_pure (1.6.7)
     multi_json (1.0.4)
-    rack (1.4.1)
+    rack (1.6.13)
     rack-protection (1.2.0)
       rack
     rack-test (0.6.1)
